@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://0sjt0vcrrsgi"]
+
+[node name="UI" type="Node"]
+
+[node name="PlayerScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 12.0
+offset_top = 318.0
+offset_right = 58.0
+offset_bottom = 428.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="EnemyScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.0
+offset_top = 318.0
+offset_right = -13.0
+offset_bottom = 428.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "0"

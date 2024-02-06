@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn7e0f34tgapo"]
+
+[ext_resource type="Script" path="res://components/OutZone/out_zone.gd" id="1_d578n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjx1a"]
+size = Vector2(20, 700)
+
+[node name="OutZone" type="Area2D"]
+script = ExtResource("1_d578n")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 360)
+shape = SubResource("RectangleShape2D_qjx1a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

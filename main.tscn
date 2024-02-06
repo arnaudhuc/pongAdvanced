@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmr3agvyjaoqa"]
+
+[ext_resource type="PackedScene" uid="uid://dguuyyihsa6f1" path="res://components/PlayerBall/player_ball.tscn" id="1_3l5m3"]
+[ext_resource type="PackedScene" uid="uid://0sjt0vcrrsgi" path="res://screen/ui.tscn" id="1_7it8d"]
+[ext_resource type="PackedScene" uid="uid://ch4mxjtav6jiy" path="res://components/Wall/wall.tscn" id="2_b3uul"]
+[ext_resource type="PackedScene" uid="uid://yvro6mf0viav" path="res://components/PlayerPaddle/player_paddle.tscn" id="3_g8jfp"]
+[ext_resource type="PackedScene" uid="uid://dyqw3g3bjigwi" path="res://components/EnemyPaddle/enemy_paddle.tscn" id="5_b2q1i"]
+[ext_resource type="PackedScene" uid="uid://dygitnbj07ygn" path="res://components/VerticalWall/vertical_wall.tscn" id="6_qdi44"]
+
+[node name="Main" type="Node2D"]
+
+[node name="PlayerBall" parent="." instance=ExtResource("1_3l5m3")]
+position = Vector2(352, 363)
+
+[node name="UI" parent="." instance=ExtResource("1_7it8d")]
+
+[node name="UpWall" parent="." instance=ExtResource("2_b3uul")]
+position = Vector2(640, 20)
+
+[node name="DownWall" parent="." instance=ExtResource("2_b3uul")]
+position = Vector2(640, 700)
+
+[node name="PlayerPaddle" parent="." instance=ExtResource("3_g8jfp")]
+
+[node name="EnemyPaddle" parent="." instance=ExtResource("5_b2q1i")]
+
+[node name="VerticalWall" parent="." instance=ExtResource("6_qdi44")]
