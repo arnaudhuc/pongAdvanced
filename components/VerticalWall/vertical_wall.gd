@@ -2,7 +2,15 @@ extends CharacterBody2D
 
 class_name VerticalWall
 
-func _physics_process(delta):
-	var collider = move_and_collide(Vector2.ZERO)
+enum Direction {Left, Right}
 
-	print(collider)
+
+func _physics_process(delta):
+	pass
+
+func _on_on_hit(direction):
+	pass # Replace with function body.
+
+
+func hit(direction: Direction):
+	position.x = position.x + 10

@@ -11,12 +11,14 @@ func _ready():
 	start_ball()
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity * ball_speed * delta)
-	
+	var collision = move_and_collide(velocity * ball_speed * delta, false, false, true)
+
 	if(collision):
 	# change direction
 		velocity =  velocity.bounce(collision.get_normal()) * speed_multiplier
-		print(collision is VerticalWall)
+
+	if(collision && collision.get_collider().name == "VerticalWall"):
+		collision.get_collider().call('hit', VerticalWall.Direction.Right)
 
 func start_ball():
 	randomize()
