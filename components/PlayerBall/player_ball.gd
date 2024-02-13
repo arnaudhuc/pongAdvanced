@@ -17,7 +17,7 @@ func _physics_process(delta):
 	# change direction
 		velocity =  velocity.bounce(collision.get_normal()) * speed_multiplier
 
-	if(collision && collision.get_collider().name == "VerticalWall"):
+	if(collision && collision.get_collider() is VerticalWall):
 		collision.get_collider().call('hit', VerticalWall.Direction.Right)
 
 func start_ball():

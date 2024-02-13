@@ -5,15 +5,15 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_j6rx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu3gs"]
-size = Vector2(6, 600)
+size = Vector2(10, 166)
 
 [node name="VerticalWall" type="CharacterBody2D"]
-position = Vector2(644, 348)
+scale = Vector2(1, 0.2)
 script = ExtResource("1_073oo")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6, 1000)
+scale = Vector2(10, 166)
 texture = SubResource("CanvasTexture_j6rx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
