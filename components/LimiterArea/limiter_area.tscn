@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://r14qutdlit2w"]
+
+[ext_resource type="Script" path="res://components/LimiterArea/limiter_area.gd" id="1_btgw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64dx0"]
+size = Vector2(20, 719)
+
+[node name="LimiterArea" type="Area2D"]
+script = ExtResource("1_btgw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_64dx0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,7 +4,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_luhuu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_armgg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1m4v"]
 
 [node name="PlayerBall" type="CharacterBody2D"]
 position = Vector2(640, 320)
@@ -16,4 +16,4 @@ scale = Vector2(20, 20)
 texture = SubResource("CanvasTexture_luhuu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_armgg")
+shape = SubResource("CircleShape2D_s1m4v")

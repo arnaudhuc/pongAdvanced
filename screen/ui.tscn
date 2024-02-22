@@ -1,22 +1,29 @@
-[gd_scene format=3 uid="uid://0sjt0vcrrsgi"]
+[gd_scene load_steps=3 format=3 uid="uid://0sjt0vcrrsgi"]
+
+[ext_resource type="FontFile" uid="uid://du63dha3m24ty" path="res://assets/VT323-Regular.ttf" id="1_07auo"]
+[ext_resource type="Script" path="res://screen/ui.gd" id="1_85oxq"]
 
 [node name="UI" type="Node"]
+script = ExtResource("1_85oxq")
 
-[node name="PlayerScoreLabel" type="Label" parent="."]
+[node name="EnemyScoreLabel" type="Label" parent="."]
+texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 12.0
+offset_left = 37.0
 offset_top = 318.0
-offset_right = 58.0
+offset_right = 83.0
 offset_bottom = 428.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_07auo")
 theme_override_font_sizes/font_size = 80
 text = "0"
 
-[node name="EnemyScoreLabel" type="Label" parent="."]
+[node name="PlayerScoreLabel" type="Label" parent="."]
+texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -27,5 +34,6 @@ offset_bottom = 428.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_07auo")
 theme_override_font_sizes/font_size = 80
 text = "0"

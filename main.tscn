@@ -1,18 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmr3agvyjaoqa"]
+[gd_scene load_steps=9 format=3 uid="uid://bmr3agvyjaoqa"]
 
-[ext_resource type="PackedScene" uid="uid://dguuyyihsa6f1" path="res://components/PlayerBall/player_ball.tscn" id="1_3l5m3"]
 [ext_resource type="PackedScene" uid="uid://0sjt0vcrrsgi" path="res://screen/ui.tscn" id="1_7it8d"]
 [ext_resource type="PackedScene" uid="uid://ch4mxjtav6jiy" path="res://components/Wall/wall.tscn" id="2_b3uul"]
 [ext_resource type="PackedScene" uid="uid://yvro6mf0viav" path="res://components/PlayerPaddle/player_paddle.tscn" id="3_g8jfp"]
 [ext_resource type="PackedScene" uid="uid://dyqw3g3bjigwi" path="res://components/EnemyPaddle/enemy_paddle.tscn" id="5_b2q1i"]
-[ext_resource type="PackedScene" uid="uid://dygitnbj07ygn" path="res://components/VerticalWall/vertical_wall.tscn" id="6_qdi44"]
+[ext_resource type="PackedScene" uid="uid://de7dsylpseocp" path="res://v_walls.tscn" id="6_wwgdk"]
+[ext_resource type="PackedScene" uid="uid://bn7e0f34tgapo" path="res://components/OutZone/out_zone.tscn" id="7_h24no"]
+[ext_resource type="PackedScene" uid="uid://qpee3lwrqkb6" path="res://components/BrickSpawner/ball_spawner.tscn" id="8_ymcs3"]
+[ext_resource type="PackedScene" uid="uid://r14qutdlit2w" path="res://components/LimiterArea/limiter_area.tscn" id="9_h5w6n"]
 
 [node name="Main" type="Node2D"]
 
-[node name="PlayerBall" parent="." instance=ExtResource("1_3l5m3")]
-position = Vector2(352, 363)
-
 [node name="UI" parent="." instance=ExtResource("1_7it8d")]
+unique_name_in_owner = true
 
 [node name="UpWall" parent="." instance=ExtResource("2_b3uul")]
 position = Vector2(640, 20)
@@ -23,66 +23,26 @@ position = Vector2(640, 700)
 [node name="PlayerPaddle" parent="." instance=ExtResource("3_g8jfp")]
 
 [node name="EnemyPaddle" parent="." instance=ExtResource("5_b2q1i")]
+position = Vector2(1294, 320)
 
-[node name="VerticalWall" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 46)
+[node name="VWalls" parent="." instance=ExtResource("6_wwgdk")]
 
-[node name="VerticalWall2" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 79)
+[node name="OutZone" parent="." instance=ExtResource("7_h24no")]
+position = Vector2(-4, 0)
+isPlayerOutZone = true
 
-[node name="VerticalWall3" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 112)
+[node name="OutZone2" parent="." instance=ExtResource("7_h24no")]
+position = Vector2(1249, 0)
 
-[node name="VerticalWall4" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 145)
+[node name="PlayerBallSpawner" parent="." instance=ExtResource("8_ymcs3")]
+unique_name_in_owner = true
+position = Vector2(297, 383)
+isEnemySpawner = true
 
-[node name="VerticalWall5" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 178)
+[node name="EnemyBallSpawner" parent="." instance=ExtResource("8_ymcs3")]
+unique_name_in_owner = true
+position = Vector2(945, 383)
+isEnemySpawner = true
 
-[node name="VerticalWall6" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 211)
-
-[node name="VerticalWall7" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 244)
-
-[node name="VerticalWall8" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 277)
-
-[node name="VerticalWall9" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 310)
-
-[node name="VerticalWall10" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 343)
-
-[node name="VerticalWall11" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 376)
-
-[node name="VerticalWall12" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 409)
-
-[node name="VerticalWall13" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 442)
-
-[node name="VerticalWall14" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 475)
-
-[node name="VerticalWall15" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 508)
-
-[node name="VerticalWall16" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 541)
-
-[node name="VerticalWall17" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 574)
-
-[node name="VerticalWall18" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 607)
-
-[node name="VerticalWall19" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 640)
-
-[node name="VerticalWall20" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 673)
-
-[node name="VerticalWall21" parent="." instance=ExtResource("6_qdi44")]
-position = Vector2(645, 706)
+[node name="LimiterArea" parent="." instance=ExtResource("9_h5w6n")]
+position = Vector2(519, 357)

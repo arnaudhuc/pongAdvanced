@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://qpee3lwrqkb6"]
+
+[ext_resource type="Script" path="res://components/BrickSpawner/ball_spawner.gd" id="1_7gxp0"]
+[ext_resource type="PackedScene" uid="uid://dguuyyihsa6f1" path="res://components/PlayerBall/player_ball.tscn" id="2_e1coc"]
+
+[node name="BallSpawner" type="Node2D"]
+script = ExtResource("1_7gxp0")
+ball_scene = ExtResource("2_e1coc")
