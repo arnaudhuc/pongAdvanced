@@ -7,7 +7,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1m4v"]
 
 [node name="PlayerBall" type="CharacterBody2D"]
-position = Vector2(640, 320)
 script = ExtResource("1_rjndw")
 metadata/_edit_group_ = true
 

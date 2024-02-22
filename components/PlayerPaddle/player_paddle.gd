@@ -21,4 +21,4 @@ func get_size():
 
 func get_height():
 	return get_size().y
-`
+

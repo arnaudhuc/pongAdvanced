@@ -21,6 +21,7 @@ position = Vector2(640, 20)
 position = Vector2(640, 700)
 
 [node name="PlayerPaddle" parent="." instance=ExtResource("3_g8jfp")]
+position = Vector2(26, 195)
 
 [node name="EnemyPaddle" parent="." instance=ExtResource("5_b2q1i")]
 position = Vector2(1294, 320)
