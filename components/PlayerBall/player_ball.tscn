@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dguuyyihsa6f1"]
 
 [ext_resource type="Script" path="res://components/PlayerBall/player_ball.gd" id="1_rjndw"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_luhuu"]
+[ext_resource type="Texture2D" uid="uid://bsknfdud6awn5" path="res://assets/enemyBall.jpg" id="2_rsjba"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s1m4v"]
 
@@ -11,8 +10,7 @@ script = ExtResource("1_rjndw")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(20, 20)
-texture = SubResource("CanvasTexture_luhuu")
+texture = ExtResource("2_rsjba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_s1m4v")

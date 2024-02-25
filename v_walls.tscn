@@ -63,6 +63,3 @@ position = Vector2(645, 640)
 
 [node name="VerticalWall20" parent="." instance=ExtResource("1_tlmyk")]
 position = Vector2(645, 673)
-
-[node name="VerticalWall21" parent="." instance=ExtResource("1_tlmyk")]
-position = Vector2(645, 706)

@@ -2,10 +2,28 @@ extends CharacterBody2D
 
 class_name VerticalWall
 
+@onready var sprite_2d = $Sprite2D
+
 enum Direction {LEFT, RIGHT}
 
-func hit(direction: Direction):
+var last_ball_touch: Ball
+
+const ENEMY_WALL = preload("res://assets/enemyWall.jpg")
+const PLAYER_WALL = preload("res://assets/playerWall.jpg")
+const NEUTRAL_WALL = preload("res://assets/neutralWall.jpg")
+
+func _ready():
+	sprite_2d.texture = NEUTRAL_WALL
+
+func hit(direction: Direction, power: int, ball: Ball):
 	if direction == Direction.LEFT:
-		position.x += 10
+		position.x += 10 * power
+		sprite_2d.texture = PLAYER_WALL
 	else:
-		position.x -= 10
+		position.x -= 10 * power
+		sprite_2d.texture = ENEMY_WALL
+	
+	last_ball_touch = ball
+	
+func collideWithLimiter():
+	last_ball_touch.upBallPower()

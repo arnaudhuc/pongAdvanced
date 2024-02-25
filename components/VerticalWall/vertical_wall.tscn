@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dygitnbj07ygn"]
 
 [ext_resource type="Script" path="res://components/VerticalWall/vertical_wall.gd" id="1_073oo"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_j6rx1"]
+[ext_resource type="Texture2D" uid="uid://b8umntn6jn417" path="res://assets/neutralWall.jpg" id="2_xd0n2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu3gs"]
 size = Vector2(10, 166)
@@ -13,8 +12,7 @@ script = ExtResource("1_073oo")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(10, 166)
-texture = SubResource("CanvasTexture_j6rx1")
+texture = ExtResource("2_xd0n2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iu3gs")

@@ -15,16 +15,16 @@
 unique_name_in_owner = true
 
 [node name="UpWall" parent="." instance=ExtResource("2_b3uul")]
-position = Vector2(640, 20)
+position = Vector2(640, 19.4)
 
 [node name="DownWall" parent="." instance=ExtResource("2_b3uul")]
-position = Vector2(640, 700)
+position = Vector2(640, 699.6)
 
 [node name="PlayerPaddle" parent="." instance=ExtResource("3_g8jfp")]
 position = Vector2(26, 195)
 
 [node name="EnemyPaddle" parent="." instance=ExtResource("5_b2q1i")]
-position = Vector2(1294, 320)
+position = Vector2(1247, 321)
 
 [node name="VWalls" parent="." instance=ExtResource("6_wwgdk")]
 
@@ -38,12 +38,15 @@ position = Vector2(1249, 0)
 [node name="PlayerBallSpawner" parent="." instance=ExtResource("8_ymcs3")]
 unique_name_in_owner = true
 position = Vector2(297, 383)
-isEnemySpawner = true
 
 [node name="EnemyBallSpawner" parent="." instance=ExtResource("8_ymcs3")]
 unique_name_in_owner = true
 position = Vector2(945, 383)
 isEnemySpawner = true
 
-[node name="LimiterArea" parent="." instance=ExtResource("9_h5w6n")]
-position = Vector2(519, 357)
+[node name="PlayerLimiterArea" parent="." instance=ExtResource("9_h5w6n")]
+position = Vector2(595, 360)
+
+[node name="EnemyLimiterArea2" parent="." instance=ExtResource("9_h5w6n")]
+position = Vector2(695, 360)
+isPlayerLimiterArea = false

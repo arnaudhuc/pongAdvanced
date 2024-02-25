@@ -6,20 +6,24 @@ class_name Ball
 @export var speed_multiplier = 1.02
 @export var isEnemyBall = false
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var sprite_2d = $Sprite2D
 
 var ball_speed = INITIAL_BALL_SPEED
 var speed_up_factor = 1.05
 var start_position: Vector2
 var last_collider_id
-
+var ball_power = 1
+const ENEMY_BALL = preload("res://assets/enemyBall.jpg")
+const PLAYER_BALL = preload("res://assets/playerBall.jpg")
 const VELOCITY_LIMIT = 40
 
 func _ready():
 	start_ball()
-	start_position = global_position
+	start_position = position
+	sprite_2d.texture = ENEMY_BALL if isEnemyBall else PLAYER_BALL
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity * ball_speed * delta, false, false, true)
+	var collision = move_and_collide(velocity * ball_speed * delta)
 	if(!collision):
 		return
 
@@ -31,9 +35,9 @@ func _physics_process(delta):
 
 	if(collider is VerticalWall):
 		if isEnemyBall:
-			collider.call('hit', VerticalWall.Direction.RIGHT)
+			collider.hit(VerticalWall.Direction.RIGHT, ball_power, self)
 		else :
-			collider.call('hit', VerticalWall.Direction.LEFT)
+			collider.hit(VerticalWall.Direction.LEFT, ball_power, self)
 
 
 func start_ball():
@@ -62,3 +66,6 @@ func reset():
 
 func setIsEnemy(value: bool):
 	isEnemyBall = value
+
+func upBallPower():
+	ball_power += 5

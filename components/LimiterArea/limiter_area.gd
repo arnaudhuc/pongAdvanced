@@ -6,10 +6,14 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body is Ball:
-		if isPlayerLimiterArea and body.isEnemyBall:
+		var ball = body
+		if isPlayerLimiterArea and ball.isEnemyBall:
 			enemy_ball_spawner.spawn(true)
-			body.setIsEnemy(false)
-		if !isPlayerLimiterArea and !body.isEnemyBall:
+			ball.setIsEnemy(false)
+		if !isPlayerLimiterArea and !ball.isEnemyBall:
 			player_ball_spawner.spawn(false)
-			body.setIsEnemy(true)
-
+			ball.setIsEnemy(true)
+			
+	if body is VerticalWall:
+		var vWall = body
+		vWall.collideWithLimiter()

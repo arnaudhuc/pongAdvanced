@@ -9,9 +9,10 @@ func _on_body_entered(body):
 	if !body is Ball:
 		return
 
+	var ball = body
 	if isPlayerOutZone:
 		ui.updateEnemyScore(1)
 	else:
 		ui.updatePlayerScore(1)
 
-	body.reset()
+	ball.reset()

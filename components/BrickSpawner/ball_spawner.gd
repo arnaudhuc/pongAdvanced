@@ -12,4 +12,4 @@ func spawn(isEnemy: bool):
 	if isEnemy:
 		ball.setIsEnemy(true)
 	ball.set_position(Vector2.ZERO)
-	add_child(ball)
+	call_deferred("add_child", ball)
