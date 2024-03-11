@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://r14qutdlit2w"]
+[gd_scene load_steps=4 format=3 uid="uid://r14qutdlit2w"]
 
 [ext_resource type="Script" path="res://components/LimiterArea/limiter_area.gd" id="1_btgw0"]
+[ext_resource type="Texture2D" uid="uid://vwh8qncnnply" path="res://assets/PingPongDottedLine.png" id="2_tjmmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64dx0"]
 size = Vector2(20, 719)
@@ -10,5 +11,12 @@ script = ExtResource("1_btgw0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_64dx0")
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+points = PackedVector2Array(0, -350, 0, 350)
+width = 5.0
+texture = ExtResource("2_tjmmr")
+texture_mode = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

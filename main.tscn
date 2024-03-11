@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmr3agvyjaoqa"]
+[gd_scene load_steps=10 format=3 uid="uid://bmr3agvyjaoqa"]
 
 [ext_resource type="PackedScene" uid="uid://0sjt0vcrrsgi" path="res://screen/ui.tscn" id="1_7it8d"]
+[ext_resource type="PackedScene" uid="uid://ehlsb522echt" path="res://components/GameOverScreen/game_over_screen.tscn" id="1_a4cy7"]
 [ext_resource type="PackedScene" uid="uid://ch4mxjtav6jiy" path="res://components/Wall/wall.tscn" id="2_b3uul"]
 [ext_resource type="PackedScene" uid="uid://yvro6mf0viav" path="res://components/PlayerPaddle/player_paddle.tscn" id="3_g8jfp"]
 [ext_resource type="PackedScene" uid="uid://dyqw3g3bjigwi" path="res://components/EnemyPaddle/enemy_paddle.tscn" id="5_b2q1i"]
@@ -10,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://r14qutdlit2w" path="res://components/LimiterArea/limiter_area.tscn" id="9_h5w6n"]
 
 [node name="Main" type="Node2D"]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("1_a4cy7")]
 
 [node name="UI" parent="." instance=ExtResource("1_7it8d")]
 unique_name_in_owner = true

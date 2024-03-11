@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ehlsb522echt"]
+
+[ext_resource type="Texture2D" uid="uid://cq7pij66g5ns2" path="res://assets/blackBackground.png" id="1_o7ko7"]
+[ext_resource type="FontFile" uid="uid://du63dha3m24ty" path="res://assets/VT323-Regular.ttf" id="2_5vmg5"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(640, 360)
+scale = Vector2(0.45, 0.489362)
+texture = ExtResource("1_o7ko7")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -60.0
+offset_right = 216.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5vmg5")
+theme_override_font_sizes/font_size = 120
+text = "Game Over"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -214.0
+offset_right = 127.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Play again
+"

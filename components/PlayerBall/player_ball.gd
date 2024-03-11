@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Ball
 
-@export var INITIAL_BALL_SPEED = 10
+@export var INITIAL_BALL_SPEED = 15
 @export var speed_multiplier = 1.02
 @export var isEnemyBall = false
 @onready var collision_shape_2d = $CollisionShape2D
@@ -55,7 +55,6 @@ func ball_collision(collider):
 	var new_velocity = Vector2.ZERO
 
 	new_velocity.y = directing_coefficient * velocity_xy
-
 	new_velocity.x = sqrt(absf(velocity_xy * velocity_xy - new_velocity.y * new_velocity.y)) * (-1 if velocity.x > 0 else 1)
 
 	velocity = (new_velocity * speed_up_factor).limit_length(VELOCITY_LIMIT)
@@ -68,4 +67,4 @@ func setIsEnemy(value: bool):
 	isEnemyBall = value
 
 func upBallPower():
-	ball_power += 5
+	ball_power += 2

@@ -22,8 +22,9 @@ func hit(direction: Direction, power: int, ball: Ball):
 	else:
 		position.x -= 10 * power
 		sprite_2d.texture = ENEMY_WALL
-	
+
 	last_ball_touch = ball
-	
+
 func collideWithLimiter():
 	last_ball_touch.upBallPower()
+	queue_free()

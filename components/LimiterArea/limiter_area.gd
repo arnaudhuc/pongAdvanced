@@ -13,7 +13,7 @@ func _on_body_entered(body):
 		if !isPlayerLimiterArea and !ball.isEnemyBall:
 			player_ball_spawner.spawn(false)
 			ball.setIsEnemy(true)
-			
+
 	if body is VerticalWall:
 		var vWall = body
 		vWall.collideWithLimiter()
