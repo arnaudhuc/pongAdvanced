@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ehlsb522echt"]
+[gd_scene load_steps=4 format=3 uid="uid://ehlsb522echt"]
 
 [ext_resource type="Texture2D" uid="uid://cq7pij66g5ns2" path="res://assets/blackBackground.png" id="1_o7ko7"]
+[ext_resource type="Script" path="res://components/GameOverScreen/game_over_screen.gd" id="1_ti7qg"]
 [ext_resource type="FontFile" uid="uid://du63dha3m24ty" path="res://assets/VT323-Regular.ttf" id="2_5vmg5"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource("1_ti7qg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 top_level = true
@@ -42,3 +44,5 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Play again
 "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

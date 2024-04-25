@@ -2,20 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://0sjt0vcrrsgi" path="res://screen/ui.tscn" id="1_7it8d"]
 [ext_resource type="PackedScene" uid="uid://ehlsb522echt" path="res://components/GameOverScreen/game_over_screen.tscn" id="1_a4cy7"]
+[ext_resource type="PackedScene" uid="uid://dygitnbj07ygn" path="res://components/VerticalWall/vertical_wall.tscn" id="1_tlmyk"]
 [ext_resource type="PackedScene" uid="uid://ch4mxjtav6jiy" path="res://components/Wall/wall.tscn" id="2_b3uul"]
 [ext_resource type="PackedScene" uid="uid://yvro6mf0viav" path="res://components/PlayerPaddle/player_paddle.tscn" id="3_g8jfp"]
 [ext_resource type="PackedScene" uid="uid://dyqw3g3bjigwi" path="res://components/EnemyPaddle/enemy_paddle.tscn" id="5_b2q1i"]
-[ext_resource type="PackedScene" uid="uid://de7dsylpseocp" path="res://v_walls.tscn" id="6_wwgdk"]
 [ext_resource type="PackedScene" uid="uid://bn7e0f34tgapo" path="res://components/OutZone/out_zone.tscn" id="7_h24no"]
 [ext_resource type="PackedScene" uid="uid://qpee3lwrqkb6" path="res://components/BrickSpawner/ball_spawner.tscn" id="8_ymcs3"]
 [ext_resource type="PackedScene" uid="uid://r14qutdlit2w" path="res://components/LimiterArea/limiter_area.tscn" id="9_h5w6n"]
 
 [node name="Main" type="Node2D"]
 
-[node name="GameOverScreen" parent="." instance=ExtResource("1_a4cy7")]
+[node name="GameOverScreen" parent="." node_paths=PackedStringArray("ui", "vWalls") instance=ExtResource("1_a4cy7")]
+visible = false
+ui = NodePath("../UI")
+vWalls = [NodePath("../vWalls/VerticalWall"), NodePath("../vWalls/VerticalWall2"), NodePath("../vWalls/VerticalWall3"), NodePath("../vWalls/VerticalWall4"), NodePath("../vWalls/VerticalWall5"), NodePath("../vWalls/VerticalWall6"), NodePath("../vWalls/VerticalWall7"), NodePath("../vWalls/VerticalWall8"), NodePath("../vWalls/VerticalWall9"), NodePath("../vWalls/VerticalWall10"), NodePath("../vWalls/VerticalWall11"), NodePath("../vWalls/VerticalWall12"), NodePath("../vWalls/VerticalWall13"), NodePath("../vWalls/VerticalWall14"), NodePath("../vWalls/VerticalWall15"), NodePath("../vWalls/VerticalWall16"), NodePath("../vWalls/VerticalWall17"), NodePath("../vWalls/VerticalWall18"), NodePath("../vWalls/VerticalWall19"), NodePath("../vWalls/VerticalWall20")]
 
-[node name="UI" parent="." instance=ExtResource("1_7it8d")]
+[node name="UI" parent="." node_paths=PackedStringArray("gameOverScreen") instance=ExtResource("1_7it8d")]
 unique_name_in_owner = true
+gameOverScreen = NodePath("../GameOverScreen")
 
 [node name="UpWall" parent="." instance=ExtResource("2_b3uul")]
 position = Vector2(640, 19.4)
@@ -28,8 +32,6 @@ position = Vector2(26, 195)
 
 [node name="EnemyPaddle" parent="." instance=ExtResource("5_b2q1i")]
 position = Vector2(1247, 321)
-
-[node name="VWalls" parent="." instance=ExtResource("6_wwgdk")]
 
 [node name="OutZone" parent="." instance=ExtResource("7_h24no")]
 position = Vector2(-4, 0)
@@ -53,3 +55,65 @@ position = Vector2(595, 360)
 [node name="EnemyLimiterArea2" parent="." instance=ExtResource("9_h5w6n")]
 position = Vector2(695, 360)
 isPlayerLimiterArea = false
+
+[node name="vWalls" type="Node" parent="."]
+
+[node name="VerticalWall" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 46)
+
+[node name="VerticalWall2" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 79)
+
+[node name="VerticalWall3" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 112)
+
+[node name="VerticalWall4" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 145)
+
+[node name="VerticalWall5" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 178)
+
+[node name="VerticalWall6" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 211)
+
+[node name="VerticalWall7" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 244)
+
+[node name="VerticalWall8" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 277)
+
+[node name="VerticalWall9" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 310)
+
+[node name="VerticalWall10" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 343)
+
+[node name="VerticalWall11" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 376)
+
+[node name="VerticalWall12" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 409)
+
+[node name="VerticalWall13" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 442)
+
+[node name="VerticalWall14" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 475)
+
+[node name="VerticalWall15" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 508)
+
+[node name="VerticalWall16" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 541)
+
+[node name="VerticalWall17" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 574)
+
+[node name="VerticalWall18" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 607)
+
+[node name="VerticalWall19" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 640)
+
+[node name="VerticalWall20" parent="vWalls" instance=ExtResource("1_tlmyk")]
+position = Vector2(645, 673)

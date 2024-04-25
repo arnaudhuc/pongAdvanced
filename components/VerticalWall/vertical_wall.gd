@@ -11,9 +11,11 @@ var last_ball_touch: Ball
 const ENEMY_WALL = preload("res://assets/enemyWall.jpg")
 const PLAYER_WALL = preload("res://assets/playerWall.jpg")
 const NEUTRAL_WALL = preload("res://assets/neutralWall.jpg")
+var initialPosition: Vector2
 
 func _ready():
 	sprite_2d.texture = NEUTRAL_WALL
+	initialPosition = position
 
 func hit(direction: Direction, power: int, ball: Ball):
 	if direction == Direction.LEFT:
@@ -28,3 +30,7 @@ func hit(direction: Direction, power: int, ball: Ball):
 func collideWithLimiter():
 	last_ball_touch.upBallPower()
 	queue_free()
+
+func reset():
+	position = initialPosition
+	sprite_2d.texture = NEUTRAL_WALL
